@@ -10,7 +10,6 @@ workingDays=20
 maxHrsInMonth=100
 monthSalary=0
 totalWorkingHr=0
-
 function getWorkingHours() {
 	case $empCheck in
 		$isFullTimePresent)
@@ -32,7 +31,8 @@ do
 	workingHr="$( getWorkingHours $empCheck )"
 	dailyWage[i]=$((workingHr*wagePerHour))
 	totalWorkingHr=$((totalWorkingHr+workingHr))
+	echo "Day$((i+1)) wage: ${dailyWage[i]}"
 done
-echo "Employee Daily wage : ${dailyWage[@]}"
+echo "Daily wage : ${dailyWage[@]}"
 monthSalary=$((wagePerHour*totalWorkingHr))
 echo "Employee monthly wage : $monthSalary"
